@@ -15,10 +15,14 @@ jobs:
         with:
           java-version: 1.8
 
+      - name: Permissions
+        working-directory: .
+        run: chmod +x ./gradlew
+
       - name: Build with Gradle
         working-directory: .
-        run: sudo ./gradlew build -x test
+        run: ./gradlew build -x test
 
       - name: Run tests
         working-directory: .
-        run: sudo ./gradlew test
+        run: ./gradlew test
